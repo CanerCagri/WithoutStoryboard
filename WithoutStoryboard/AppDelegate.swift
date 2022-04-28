@@ -16,7 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let window = UIWindow(frame: UIScreen.main.bounds)
-        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        let swipingController = SwipingController(collectionViewLayout: layout)
+        
+        window.rootViewController = swipingController
         window.makeKeyAndVisible()
         self.window = window
         
